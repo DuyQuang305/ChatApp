@@ -14,7 +14,7 @@ import avt4 from '../assets/img/avt4.png'
 function SetAvatar() {
   const navigate = useNavigate();
   const avatars = [avt1, avt2, avt3, avt4];
-  const [selectedAvatar, setSelectedAvatar] = useState(undefined);
+  const [selectedAvatar, setSelectedAvatar] = useState(-1);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function SetAvatar() {
   }, []);
 
   const handleSaveAvatar = async () => {
-    if (selectedAvatar === undefined) {
+    if (selectedAvatar === -1) {
       toast.error('Please select an avatar');
     } else {
       const user = JSON.parse(localStorage.getItem('chat-app-user'));
@@ -33,7 +33,6 @@ function SetAvatar() {
         const { data } = await axios.post(`http://localhost:8000/api/auth/setAvatar/${user._id}`, {
           image: avatars[selectedAvatar],
         });
-        console.log(data.isSet);
         if (data.isSet) {
           user.isAvatarImageSet = true;
           user.avatarImage = data.image;

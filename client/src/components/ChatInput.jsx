@@ -14,11 +14,10 @@ export default function ChatInput({handleSendMsg}) {
         setShowEmojiPicker(!showEmojiPicker);
     }
 
-    const handleEmojiClick = (event, emoji) => {
-        console.log(emoji.emoji);
-        let message = msg;
-        message += emoji.emoji;
-        setMsg(message);
+    const handleEmojiClick = (e) => {
+         let newMsg = msg;
+        newMsg += e.native;
+        setMsg(newMsg);
     }
 
     const sendChat = (event) => {
@@ -35,7 +34,7 @@ export default function ChatInput({handleSendMsg}) {
             <div className="emoji">
                 <BsEmojiSmileFill onClick={handleEmojiPickerHideShow}/>
                 {
-                    showEmojiPicker && <Picker data={data} onEmojiClick={handleEmojiClick}/>
+                    showEmojiPicker && <Picker data={data} onEmojiSelect={handleEmojiClick}/>
                 }
             </div>
         </div>

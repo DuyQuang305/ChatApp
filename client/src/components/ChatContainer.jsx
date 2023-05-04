@@ -48,7 +48,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
                 setArrivalMessage({fromSelf: false, messages: msg});
             })
         }
-    }, [])
+    }, [socket])
 
     useEffect( () => {
         arrivalMessage && setMessages( (prev) => [...prev, arrivalMessage])
@@ -78,7 +78,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
                             {
                                 messages.map((message, index) => {
                                     return (
-                                        <div key={uuidv4()} ref={scrollRef}>
+                                        <div key={index} ref={scrollRef}>
                                             <div className={`message ${message.fromSelf ? 'sended' : 'recieved'}`}>
                                                 <div className="content">
                                                     <p>
@@ -90,6 +90,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
                                     )
                                 })
                             }
+                            <div ref={scrollRef} />
                         </div>
                         <ChatInput handleSendMsg={handleSendMsg} />
                     </div>

@@ -1,18 +1,37 @@
-.container {
-    background-image: url('../img/register.png');
-    max-width: 100%;
-    padding-top: 80px;
-    padding-bottom: 200px;
+.wrap-auth {
+  height: 100vh;
+  width: 100vw;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-auth__register {
+    background-color: #00000076;
+    width: 40%;
+    height: 85vh;
+}
+
+.container-auth__login {
+  background-color: #00000076;
+  width: 40%;
+  height: 60vh;
 }
 
 .title {
-
     max-width: 400px;
     margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 30px;
     color: #fff;
     font-size: 26px;
+    display:flex;
+    align-items: center;
+}
+
+.title img {
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
 }
 
 .auth-form {
@@ -23,7 +42,7 @@
   
 
 .auth-form input {
-    width: 400px;
+    width: 70%;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -31,6 +50,7 @@
     border: 2px solid #ccc;
     font-size: 16px;
     color: #fff;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
   }
 
   .auth-form input::placeholder {
@@ -44,7 +64,7 @@
   }
   
   .btn_submit {
-    width: 404px;
+    width: 70%;
     height: 40px;
     margin-top: 20px;
     margin-bottom: 10px;

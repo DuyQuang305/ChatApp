@@ -25,10 +25,9 @@
     margin-left: 4px;
   }
 
-  .emoji .EmojiPickerReact {
+  em-emoji-picker {
     position: absolute;
-    top: -400px;
-    right: 0;
+    top: -450px;
   }
   
   

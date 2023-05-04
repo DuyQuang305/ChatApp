@@ -5,6 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { Link, useNavigate  } from 'react-router-dom';
+import Logo from '../assets/svg/Logo.svg'
+
 
  function Register() {
     const navigate = useNavigate();
@@ -73,52 +75,56 @@ import { Link, useNavigate  } from 'react-router-dom';
       }
 
   return (
-      <div className='container'>
-          <div className='title'>Creative SignUp Form</div>
-          <form className='auth-form' onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={handleUserNameChange}
-            />
-            <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleEmailChange}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={handlePassWordChange}
-            />
-            <input
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={handleConFirmPasswordChange}
-            />
-            <button className='btn_submit' type="submit">Register</button>
-
-            <span className='text'>
-                  <span>Do you have an Account?</span>
-                 <Link to="/login" >Login</Link>
-            </span>
-        </form>
-        <ToastContainer
-                  position="top-right"
-                  autoClose={5000}
-                  hideProgressBar={false}
-                  newestOnTop={false}
-                  closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss
-                  draggable
-                  pauseOnHover
-                  theme="dark"
-            />
+      <div className="wrap-auth">
+            <div className='container-auth__register'>
+                <div className='title'>
+                  <h2>Register</h2>
+                  <img src={Logo} alt="logo" className="logo" />
+                </div>
+                <form className='auth-form' onSubmit={handleSubmit}>
+                  <input
+                      type="text"
+                      placeholder="Username"
+                      value={username}
+                      onChange={handleUserNameChange}
+                  />
+                  <input
+                      type="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={handleEmailChange}
+                  />
+                  <input
+                      type="password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={handlePassWordChange}
+                  />
+                  <input
+                      type="password"
+                      placeholder="Confirm Password"
+                      value={confirmPassword}
+                      onChange={handleConFirmPasswordChange}
+                  />
+                  <button className='btn_submit' type="submit">Register</button>
+                  <span className='text'>
+                        <span>Do you have an Account?</span>
+                       <Link to="/login" >Login</Link>
+                  </span>
+              </form>
+              <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                  />
+            </div>
       </div>
   )
 }

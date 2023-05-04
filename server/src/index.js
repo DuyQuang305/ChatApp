@@ -7,8 +7,6 @@ const router = require('./routes');
 const socket = require('socket.io');
 
 const PORT = 8000
-// const router = require('./Routes')
-
 
 // Connect to DB
 db.connect();
@@ -31,7 +29,7 @@ const server = app.listen(PORT, () => {
 const io = socket(server, {
   cors: {
     origin: 'http://localhost:3000',
-    Credentials: true,
+    credentials: true,
   },
 });
 

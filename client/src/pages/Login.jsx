@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../assets/svg/Logo.svg'
 
  function Login() {
 
@@ -55,41 +56,44 @@ import { Link, useNavigate } from 'react-router-dom';
       }
 
   return (
-      <div className='container'>
-          <div className='title'>Login Form</div>
-          <form className='auth-form' onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={handleUserNameChange}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={handlePassWordChange}
-            />
-
-            <button className='btn_submit' type="submit">LOGIN</button>
-
-            <span className='text'>
-                  <span>Don't have an Account?</span>
-                  <Link to="/register">Register</Link>
-            </span>
-        </form>
-        <ToastContainer
-                  position="top-right"
-                  autoClose={5000}
-                  hideProgressBar={false}
-                  newestOnTop={false}
-                  closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss
-                  draggable
-                  pauseOnHover
-                  theme="dark"
-            />
+      <div className="wrap-auth">
+            <div className='container-auth__login'>
+                <div className='title'>
+                  <h2>Login</h2>
+                  <img src={Logo} alt="logo" className="logo" />
+                </div>
+                <form className='auth-form' onSubmit={handleSubmit}>
+                  <input
+                      type="text"
+                      placeholder="Username"
+                      value={username}
+                      onChange={handleUserNameChange}
+                  />
+                  <input
+                      type="password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={handlePassWordChange}
+                  />
+                  <button className='btn_submit' type="submit">LOGIN</button>
+                  <span className='text'>
+                        <span>Don't have an Account?</span>
+                        <Link to="/register">Register</Link>
+                  </span>
+              </form>
+              <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                  />
+            </div>
       </div>
   )
 }
